@@ -1,8 +1,9 @@
 $required_letter = document.querySelector("#letter__required");
+$next_letter = document.querySelector("#letter__next");
 $input_text = document.querySelector("#input__text");
 
-var displayLettersArray = randomizeLetterArray();
-var arrayDisplayIndex = 1;
+var displayLettersArray = [];
+var arrayDisplayIndex = 0;
 
 function randomizeLetterArray() {
   var letters = [
@@ -37,10 +38,23 @@ function randomizeLetterArray() {
   return randomLetters;
 }
 
+function createMultipleLettersArray() {
+  for (var i = 0; i < 3; i++) {
+    displayLettersArray.push(randomizeLetterArray());
+  }
+}
+
 function displayLetters(index) {
   var letters = displayLettersArray.slice(index, index + 3);
   return letters;
 }
 
 var letterArray = displayLetters(arrayDisplayIndex);
-$required_letter.textContent = letterArray[arrayDisplayIndex];
+$next_letter.textContent = letterArray[2];
+$required_letter.textContent = letterArray[1];
+
+console.log(
+  randomizeLetterArray(),
+  createMultipleLettersArray(),
+  displayLettersArray
+);

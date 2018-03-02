@@ -7,11 +7,13 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background: linear-gradient(to bottom right, #a4d0e7, #ffc683);
 }
 
 .wrapper__outer {
-  margin-top: 50px;
+  margin-top: 100px;
+  background-color: white;
+  box-shadow: 0 -2px 40px grey;
 }
 
 .wrapper__inner {
@@ -19,37 +21,96 @@ body {
   width: 1200px;
   height: 650px;
   background-color: white;
-  box-shadow: 0 0 20px grey;
+}
+
+.title__wrapper {
+  position: absolute;
+  top: 50px;
+  width: 100%;
 }
 
 .title {
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  word-spacing: 0.4em;
+  font-family: "Special Elite", cursive;
+  animation: typing 3.5s steps(60, end);
+  animation-delay: 0.15s;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #0f2a38;
+}
+
+.letter__container {
   position: absolute;
-  top: 50px;
-  letter-spacing: 0.1em;
+  top: 175px;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .letter__display-wrapper {
-  position: absolute;
   top: 150px;
   left: 500px;
   height: 250px;
   width: 200px;
-  background-color: #a4d0e7;
+  background: linear-gradient(to top, #a4d0e7 40%, #edf8fe);
   overflow: hidden;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -7px 10px grey;
 }
 
-#letter__required {
+.previous {
+  margin-top: -25px;
+  transform: skewY(10deg);
+  box-shadow: 7px -7px 10px grey;
+  background: linear-gradient(10deg, #a4d0e7 20%, #edf8fe);
+}
+
+.next {
+  margin-top: -25px;
+  transform: skewY(-10deg);
+  box-shadow: -7px -7px 10px grey;
+  background: linear-gradient(350deg, #a4d0e7 20%, #edf8fe);
+}
+
+.letter__style {
+  margin-top: -10px;
+  font-size: 8em;
+  color: #0f2a38;
+}
+
+.letter__info {
+  color: #5f94b0;
+  margin-top: 20px;
+}
+
+.stats__wrapper {
   position: absolute;
-  top: 70px;
-  left: 0;
-  font-size: 6em;
+  top: 475px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats__title {
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: #0f2a38;
+}
+
+.stats {
+  font-weight: normal;
+  color: #c78c45;
 }
 
 #input__text {
-  position: absolute;
-  bottom: 100px;
-  left: 500px;
   width: 200px;
   height: 80px;
   font-size: 2em;
