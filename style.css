@@ -112,12 +112,12 @@ body {
   letter-spacing: 0.1em;
 }
 
-#input__text {
+#input-text {
   width: 200px;
   height: 80px;
   font-size: 2em;
 }
 
-#input__text:hover {
+#input-text:hover {
   box-shadow: 0 0 10px grey;
 }

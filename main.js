@@ -1,13 +1,5 @@
-$previus_letter = document.querySelector("#letter__previous");
-$required_letter = document.querySelector("#letter__required");
-$next_letter = document.querySelector("#letter__next");
-$input_text = document.querySelector("#input__text");
-
-var multipleLettersArray = [];
-var arrayDisplayIndex = 0;
-
-function randomizeLetterArray() {
-  var letters = [
+function randomizeLetters(length) {
+  var alphabet = [
     "a",
     "b",
     "c",
@@ -35,27 +27,29 @@ function randomizeLetterArray() {
     "y",
     "z"
   ];
-  var randomLetters = _.shuffle(letters);
-  return randomLetters;
-}
+  var randomLetters = [];
 
-function createMultipleLettersArray() {
-  for (var i = 0; i < 3; i++) {
-    multipleLettersArray.push(randomizeLetterArray());
+  while (randomLetters.length < length) {
+    randomLetters = randomLetters.concat(_.shuffle(alphabet));
   }
+
+  return randomLetters.slice(0, length);
 }
 
-randomizeLetterArray();
-createMultipleLettersArray();
-
-var completedLettersArray = _.flatten(multipleLettersArray);
-
-function displayLetters(index) {
-  var letters = completedLettersArray.slice(index, index + 3);
-  return letters;
+function threeLetters(index, letters) {
+  return letters.slice(index, index + 3);
 }
 
-var letterArray = displayLetters(arrayDisplayIndex);
-$previus_letter.textContent = letterArray[0];
-$required_letter.textContent = letterArray[1];
-$next_letter.textContent = letterArray[2];
+var letters = randomizeLetters(100);
+var [previous, current, next] = threeLetters(6, letters);
+
+$previousLetter = document.querySelector("#letter-previous");
+$previousLetter.textContent = previous;
+
+$requiredLetter = document.querySelector("#letter-required");
+$requiredLetter.textContent = current;
+
+$nextLetter = document.querySelector("#letter-next");
+$nextLetter.textContent = next;
+
+$inputText = document.querySelector("#input-text");
