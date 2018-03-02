@@ -108,6 +108,8 @@ body {
 .stats {
   font-weight: normal;
   color: #c78c45;
+  font-size: 1.25em;
+  letter-spacing: 0.1em;
 }
 
 #input__text {
