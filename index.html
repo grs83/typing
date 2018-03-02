@@ -4,6 +4,7 @@
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+      <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="animate.css">
       <title>Typying Challenge</title>
@@ -11,11 +12,28 @@
     <body>
       <div class="wrapper__outer">
         <div class="wrapper__inner">
-          <h1 class="title">TEST YOUR TYPING SKILLS</h1>
-          <div class="letter__display-wrapper">
-            <span id="letter__required">d</span>
+          <div class="title__wrapper">
+            <h1 class="title">TEST YOUR TYPING SKILLS</h1>
           </div>
-          <input id="input__text" type="text" maxlength="1" placeholder="Enter"/>
+          <div class="letter__container">
+            <div class="letter__display-wrapper previous">
+              <span id="letter-previous" class="letter__style animate fadeInRight"></span>
+              <p class="letter__info">Previous</p>
+            </div>
+            <div class="letter__display-wrapper required">
+              <span id="letter-required" class="letter__style animate fadeInRight"></span>
+              <p class="letter__info">Current</p>
+            </div>
+            <div class="letter__display-wrapper next">
+              <span id="letter-next" class="letter__style animate fadeInRight"></span>
+              <p class="letter__info">Next</p>
+            </div>
+          </div>
+          <div class="stats__wrapper">
+            <h3 class="stats__title">Percentage Correct: <span id="stats__percentage" class="stats">90%</span></h3>
+            <input id="input-text" type="text" maxlength="1" placeholder="Enter"/>
+            <h3 class="stats__title">Time: <span id="stats__time" class="stats">4:32</span></h3>
+          </div>
         </div>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
