@@ -112,10 +112,15 @@ body {
   letter-spacing: 0.1em;
 }
 
+.red {
+  color: #fd6064;
+}
+
 #input-text {
   width: 200px;
   height: 80px;
   font-size: 2em;
+  border: 1px solid #c78c45;
 }
 
 #input-text:hover {
